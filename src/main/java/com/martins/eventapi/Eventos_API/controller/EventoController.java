@@ -4,10 +4,9 @@ import com.martins.eventapi.Eventos_API.model.Evento;
 import com.martins.eventapi.Eventos_API.service.EventoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/eventos")
@@ -24,7 +23,11 @@ public class EventoController {
         Evento newEvento = eventoService.addEvento(evento);
         return new ResponseEntity<>(newEvento, HttpStatus.CREATED);
     }
-
+    
     // GET
-
+    @GetMapping("/all")
+    public ResponseEntity<List<Evento>> getAllEventos() {
+        List<Evento> eventos = eventoService.getAllEventos();
+        return new ResponseEntity<>(eventos, HttpStatus.OK);
+    }
 }

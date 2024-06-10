@@ -5,6 +5,8 @@ import com.martins.eventapi.Eventos_API.repository.EventoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EventoService {
 
@@ -21,6 +23,9 @@ public class EventoService {
     }
 
     // Mostrar eventos criados
+    public List<Evento> getAllEventos() {
+        return eventoRepository.findAll();
+    }
 
     // Mostrar eventos por ID
 
