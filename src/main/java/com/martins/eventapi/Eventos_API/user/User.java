@@ -1,8 +1,6 @@
 package com.martins.eventapi.Eventos_API.user;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -22,9 +20,11 @@ import java.util.List;
 @EqualsAndHashCode(of = "id")
 public class User implements UserDetails {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private String login;
     private String password;
+    @Enumerated(EnumType.STRING)
     private UserRole role;
 
     @Override
