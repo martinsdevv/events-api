@@ -1,7 +1,9 @@
 package com.martins.eventapi.Eventos_API.controller;
 
 import com.martins.eventapi.Eventos_API.repository.UserRepository;
+import com.martins.eventapi.Eventos_API.service.TokenService;
 import com.martins.eventapi.Eventos_API.user.AuthenticationDTO;
+import com.martins.eventapi.Eventos_API.user.LoginResponseDTO;
 import com.martins.eventapi.Eventos_API.user.RegisterDTO;
 import com.martins.eventapi.Eventos_API.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +23,17 @@ public class AuthController {
     private AuthenticationManager authManager;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private TokenService tokenService;
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody AuthenticationDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authManager.authenticate(usernamePassword);
-        return ResponseEntity.ok().build();
+
+        var token = tokenService.generateToken((User) auth.getPrincipal());
+
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping("/register")
