@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.financiamentos</OriginalElement>
+  <nodes>
+    <node x="-420.0197604790419" y="-105.61437125748503">ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.financiamentos</node>
+    <node x="70.22275449101801" y="153.4083832335329">ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.sub_grupos</node>
+    <node x="-59.27724550898199" y="-54.5916167664671">ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.grupos</node>
+    <node x="-423.5197604790419" y="302.385628742515">ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.procedimentos</node>
+    <node x="0.7227544910180086" y="381.4083832335329">ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.forma_organizacao</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.forma_organizacao" target="ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.sub_grupos" relationship="REFERENCES">
+      <point x="53.25" y="-80.0" />
+      <point x="160.472754491018" y="361.4083832335329" />
+      <point x="147.222754491018" y="361.4083832335329" />
+      <point x="0.0" y="68.0" />
+    </edge>
+    <edge source="ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.forma_organizacao" target="ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.grupos" relationship="REFERENCES">
+      <point x="-53.25" y="-80.0" />
+      <point x="53.97275449101801" y="361.4083832335329" />
+      <point x="47.22275449101801" y="361.4083832335329" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.sub_grupos" target="ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.grupos" relationship="REFERENCES">
+      <point x="0.0" y="-68.0" />
+      <point x="147.222754491018" y="121.4083832335329" />
+      <point x="47.22275449101801" y="121.4083832335329" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.procedimentos" target="ff8dbe32-b078-419b-a976-2ddc49ca4d58.TABLE:sigtap.tb_sigtap.financiamentos" relationship="REFERENCES">
+      <point x="0.0" y="-188.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.8154296875" showDependencies="false" x="29.920359281437186" y="336.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
